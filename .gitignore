@@ -1,0 +1,6 @@
+/build
+/builddir
+
+# Téléchargé par Meson à partir du fichier .wrap (ne pas versionner)
+/subprojects/nlohmann_json-*/
+/subprojects/packagecache/
