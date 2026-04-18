@@ -98,6 +98,36 @@ Si `meson` n’est pas trouvé, tu peux l’installer via Python :
 py -m pip install --user meson ninja
 ```
 
+## Fonctionnalités implémentées
+
+Selon le devoir, le projet implémente les fonctionnalités suivantes :
+
+- **Récupération de données** : Utilisation de l'API Opendatasoft pour récupérer des données JSON de consommation de gaz industriel.
+- **Modélisation des données** : Création d'objets C++ pour représenter les enregistrements quotidiens et horaires.
+- **Calculs statistiques** :
+  - Moyenne, écart-type et coefficient de variation des totaux journaliers.
+  - Ratios pic/creux et nuit/jour.
+  - Moyenne glissante sur les totaux journaliers.
+- **Détection d'anomalies** : Identification des jours dont la consommation s'écarte de plus de k écarts-types.
+- **Groupement et comparaison** : Moyenne des totaux par opérateur et par secteur d'activité.
+- **Export CSV** : Export de la série complète (métadonnées + 24 valeurs horaires) et des résultats calculés (statistiques, anomalies, moyennes groupées).
+- **Interface utilisateur** : Menu interactif en console pour afficher les résultats et exporter en CSV.
+
+## Hiérarchie des classes
+
+La hiérarchie des classes suit une architecture modulaire :
+
+- **HttpClient** : Classe de base pour les requêtes HTTP (encapsule libcurl).
+- **HourlyRecord** : Structure pour les données horaires (24 valeurs).
+- **DailyConsumption** : Classe dérivée pour une journée complète (hérite conceptuellement de HourlyRecord via composition).
+- **TeregaApi** : Classe pour l'interaction avec l'API (utilise HttpClient et DailyConsumption).
+- **StatisticsEngine** : Classe pour les calculs statistiques (opère sur vector<DailyConsumption>).
+- **AnomalyDetector** : Classe pour la détection d'anomalies (utilise StatisticsEngine).
+- **CsvExporter** : Classe statique pour l'export CSV (utilise toutes les autres classes).
+- **Grouping** : Fonctions pour le groupement par opérateur/secteur.
+
+L'organisation suit le principe de séparation des responsabilités : réseau, données, calculs, export.
+
 ## Contributeurs
 
 - MBEYA NDONGO JOEL HYACINTHE
