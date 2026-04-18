@@ -19,6 +19,9 @@ sources = files(
   'src/http_client.cpp',
   'src/terega_api.cpp',
   'src/statistics_engine.cpp',
+  'src/anomaly_detector.cpp',
+  'src/csv_exporter.cpp',
+  'src/grouping.cpp',
 )
 
 executable(

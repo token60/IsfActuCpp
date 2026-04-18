@@ -75,8 +75,13 @@ meson compile -C build
 Le programme :
 
 - appelle l’URL publique (limite 20 enregistrements)
-- affiche les lignes (date, opérateur, secteur, total, pic horaire)
-- affiche ensuite quelques statistiques globales.
+- propose un **menu** en console pour afficher les résultats de façon structurée :
+  - table des enregistrements (colonnes alignées)
+  - statistiques globales (moyenne, écart-type, coefficient de variation, ratios)
+  - moyenne glissante (fenêtre paramétrable)
+  - détection d’anomalies (seuil \(k\) écarts-types)
+  - comparaison par opérateur / secteur (moyenne des totaux)
+  - export CSV de la série (métadonnées + 24 valeurs horaires)
 
 ## À faire (extensions possibles)
 
@@ -84,4 +89,20 @@ Le programme :
 - export CSV / rapport texte
 - ajout de données météo et corrélations
 - comparaison par région / secteur / opérateur
+
+## Build sous Windows (PowerShell)
+
+Si `meson` n’est pas trouvé, tu peux l’installer via Python :
+
+```powershell
+py -m pip install --user meson ninja
+```
+
+Puis (à la racine du projet) :
+
+```powershell
+meson setup build
+meson compile -C build
+.\build\gas_analytics.exe
+```
 
