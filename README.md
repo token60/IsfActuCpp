@@ -98,6 +98,12 @@ Si `meson` n’est pas trouvé, tu peux l’installer via Python :
 py -m pip install --user meson ninja
 ```
 
+## Contributeurs
+
+- MBEYA NDONGO JOEL HYACINTHE
+- ABOU YAPO ESDRAS ELISEE
+- KOUADIO KOUAKOU ELYSEE
+
 Puis (à la racine du projet) :
 
 ```powershell
