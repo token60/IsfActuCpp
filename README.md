@@ -1,5 +1,13 @@
 # gas_analytics (C++ / Meson)
 
+## Contributeurs
+
+Étudiants en L3 Actuariat :
+
+- MBEYA NDONGO JOEL HYACINTHE
+- ABOU YAPO ESDRAS ELISEE
+- KOUADIO KOUAKOU ELYSEE
+
 Projet C++ (L3 Actuariat) : **récupérer des données ouvertes de consommation de gaz industriel**, les modéliser en objets, puis calculer quelques statistiques utiles (moyenne, écart-type, ratios, moyenne glissante).
 
 ## Données (API publique)
@@ -127,12 +135,6 @@ La hiérarchie des classes suit une architecture modulaire :
 - **Grouping** : Fonctions pour le groupement par opérateur/secteur.
 
 L'organisation suit le principe de séparation des responsabilités : réseau, données, calculs, export.
-
-## Contributeurs
-
-- MBEYA NDONGO JOEL HYACINTHE
-- ABOU YAPO ESDRAS ELISEE
-- KOUADIO KOUAKOU ELYSEE
 
 Puis (à la racine du projet) :
 
