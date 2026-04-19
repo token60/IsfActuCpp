@@ -91,12 +91,6 @@ Le programme :
   - comparaison par opérateur / secteur (moyenne des totaux)
   - export CSV de la série (métadonnées + 24 valeurs horaires)
 
-## À faire (extensions possibles)
-
-- détection d’anomalies (jours à \(k\) écarts-types)
-- export CSV / rapport texte
-- ajout de données météo et corrélations
-- comparaison par région / secteur / opérateur
 
 ## Build sous Windows (PowerShell)
 
